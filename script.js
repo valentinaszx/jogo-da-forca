@@ -37,8 +37,9 @@ let erros = 0;
 const maxErros = 6;
 
 function iniciarJogo() {
-  // Seleciona um item aleatório da lista
-  const itemSorteado = bancoDePalavras[Math.floor(Math.random() * bancoDePalavras.length)];
+  // Embaralha a lista de palavras para garantir aleatoriedade total
+  const listaEmbaralhada = [...bancoDePalavras].sort(() => Math.random() - 0.5);
+  const itemSorteado = listaEmbaralhada[Math.floor(Math.random() * listaEmbaralhada.length)];
   
   palavraSecreta = itemSorteado.palavra;
   categoriaAtual = itemSorteado.categoria;
