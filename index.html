@@ -16,7 +16,10 @@
     <section class="partida" aria-label="Partida atual">
       <p id="status" aria-live="polite" aria-atomic="true"></p>
       <div id="palavra" class="palavra" aria-live="polite"></div>
-      <div id="teclado" class="teclado" role="group" aria-label="Teclado de letras"></div>
+      <div class="historico-letras">
+        <p id="rotuloLetras" class="rotulo-letras">Letras digitadas</p>
+        <div id="letrasUsadas" class="letras-usadas" role="list" aria-labelledby="rotuloLetras"></div>
+      </div>
     </section>
     <button id="reiniciar" type="button" onclick="iniciarJogo()">Novo jogo</button>
   </main>

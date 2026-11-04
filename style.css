@@ -4,9 +4,7 @@
   --papel: #fffdf7;
   --fundo: #e9f1e7;
   --linha: #d3ded2;
-  --tecla: #edf1e9;
   --coral: #e75e43;
-  --amarelo: #f1c34f;
   --texto-suave: #587069;
 }
 
@@ -77,50 +75,56 @@ h1 {
   color: var(--tinta);
 }
 
-.teclado {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 9px;
+.historico-letras {
   margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--linha);
 }
 
-.teclado button {
-  min-width: 0;
-  aspect-ratio: 1.15;
-  border: 1px solid #d5ded2;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: var(--tecla);
-  color: var(--tinta);
-  font: inherit;
-  font-size: 1rem;
+.rotulo-letras {
+  margin-bottom: 10px;
+  color: var(--texto-suave);
+  font-size: 0.75rem;
   font-weight: 800;
-  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
-  box-shadow: 0 3px 0 #c5d1c5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.teclado button:hover:not(:disabled) {
-  background-color: var(--amarelo);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 0 #d9aa36;
+.letras-usadas {
+  display: flex;
+  min-height: 34px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
 }
 
-.teclado button:active:not(:disabled) {
-  transform: translateY(1px);
-  box-shadow: 0 1px 0 #c5d1c5;
+.letra-usada {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.84rem;
+  font-weight: 800;
 }
 
-.teclado button:focus-visible,
+.letra-usada.acertada {
+  border-color: #9db9a2;
+  background-color: #e1eee3;
+  color: #245c3e;
+}
+
+.letra-usada.errada {
+  border-color: #e5a89a;
+  background-color: #fae5de;
+  color: #963d32;
+}
+
 #reiniciar:focus-visible {
   outline: 3px solid var(--coral);
   outline-offset: 3px;
-}
-
-.teclado button:disabled {
-  background-color: #e2e7df;
-  color: #89978d;
-  cursor: not-allowed;
-  box-shadow: 0 1px 0 #c5d1c5;
 }
 
 #status {
@@ -195,14 +199,6 @@ h1 {
     letter-spacing: 0.18em;
   }
 
-  .teclado {
-    gap: 6px;
-  }
-
-  .teclado button {
-    aspect-ratio: 1;
-    font-size: 0.92rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -245,6 +245,7 @@ let palavraAnterior = "";
 let palavraSecreta = "";
 let categoriaAtual = "";
 let letrasDescobertas = [];
+let letrasTentadas = new Set();
 let erros = 0;
 const maxErros = 6;
 let jogoAtivo = true;
@@ -282,40 +283,35 @@ function iniciarJogo() {
   palavraSecreta = itemSorteado.palavra.toUpperCase();
   categoriaAtual = itemSorteado.categoria;
   letrasDescobertas = Array(palavraSecreta.length).fill("_");
+  letrasTentadas = new Set();
   erros = 0;
   jogoAtivo = true;
   
   atualizarTela();
-  criarTeclado();
   focarInputMovel();
 }
 
 function atualizarTela() {
   document.getElementById("palavra").innerText = letrasDescobertas.join(" ");
   document.getElementById("status").innerText = `Dica: ${categoriaAtual} | Erros: ${erros} de ${maxErros}`;
-}
 
-function criarTeclado() {
-  const teclado = document.getElementById("teclado");
-  teclado.innerHTML = "";
-  
-  for (let i = 65; i <= 90; i++) {
-    const letra = String.fromCharCode(i);
-    const btn = document.createElement("button");
-    btn.innerText = letra;
-    btn.id = `btn-${letra}`;
-    btn.onclick = () => processarPalpite(letra);
-    teclado.appendChild(btn);
-  }
+  const historico = document.getElementById("letrasUsadas");
+  historico.replaceChildren();
+  letrasTentadas.forEach((letra) => {
+    const acertou = palavraSecreta.includes(letra);
+    const item = document.createElement("span");
+    item.className = `letra-usada ${acertou ? "acertada" : "errada"}`;
+    item.innerText = letra;
+    item.setAttribute("role", "listitem");
+    item.setAttribute("aria-label", `${letra}: ${acertou ? "correta" : "incorreta"}`);
+    historico.appendChild(item);
+  });
 }
 
 function processarPalpite(letra) {
-  if (!jogoAtivo) return;
-  
-  const btn = document.getElementById(`btn-${letra}`);
-  if (btn && btn.disabled) return;
-  
-  if (btn) btn.disabled = true;
+  if (!jogoAtivo || !/^[A-Z]$/.test(letra) || letrasTentadas.has(letra)) return;
+
+  letrasTentadas.add(letra);
 
   if (palavraSecreta.includes(letra)) {
     for (let i = 0; i < palavraSecreta.length; i++) {
@@ -335,18 +331,11 @@ function verificarFimDeJogo() {
   if (!letrasDescobertas.includes("_")) {
     document.getElementById("status").innerText = "Parabéns! Você venceu! Próxima rodada em instantes...";
     jogoAtivo = false;
-    desativarTeclado();
     timerProximaRodada = setTimeout(iniciarJogo, 1800);
   } else if (erros >= maxErros) {
     document.getElementById("status").innerText = `Você perdeu! A palavra era: ${palavraSecreta}`;
     jogoAtivo = false;
-    desativarTeclado();
   }
-}
-
-function desativarTeclado() {
-  const botoes = document.querySelectorAll(".teclado button");
-  botoes.forEach(btn => btn.disabled = true);
 }
 
 // ATIVAÇÃO DO TECLADO FÍSICO E MÓVEL
