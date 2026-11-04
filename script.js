@@ -8,6 +8,10 @@ const bancoDePalavras = [
   { palavra: "ALGORITMO", categoria: "Tecnologia" },
   { palavra: "SOFTWARE", categoria: "Tecnologia" },
   { palavra: "HARDWARE", categoria: "Tecnologia" },
+  { palavra: "ROBOTICA", categoria: "Tecnologia" },
+  { palavra: "APLICATIVO", categoria: "Tecnologia" },
+  { palavra: "SATELITE", categoria: "Tecnologia" },
+  { palavra: "SEGURANCA", categoria: "Tecnologia" },
 
   // Animais
   { palavra: "ELEFANTE", categoria: "Animal" },
@@ -15,23 +19,86 @@ const bancoDePalavras = [
   { palavra: "TUBARAO", categoria: "Animal" },
   { palavra: "PINGUIM", categoria: "Animal" },
   { palavra: "LEOPARDO", categoria: "Animal" },
+  { palavra: "CAPIVARA", categoria: "Animal" },
+  { palavra: "BORBOLETA", categoria: "Animal" },
+  { palavra: "CROCODILO", categoria: "Animal" },
+  { palavra: "BALEIA", categoria: "Animal" },
+  { palavra: "CANGURU", categoria: "Animal" },
+  { palavra: "CORUJA", categoria: "Animal" },
 
   // Alimentos
   { palavra: "MELANCIA", categoria: "Alimento" },
   { palavra: "ABACAXI", categoria: "Alimento" },
   { palavra: "MORANGO", categoria: "Alimento" },
   { palavra: "CHOCOLATE", categoria: "Alimento" },
+  { palavra: "QUEIJO", categoria: "Alimento" },
+  { palavra: "LASANHA", categoria: "Alimento" },
+  { palavra: "CENOURA", categoria: "Alimento" },
+  { palavra: "PIPOCA", categoria: "Alimento" },
+  { palavra: "CASTANHA", categoria: "Alimento" },
 
   // Objetos
   { palavra: "TECLADO", categoria: "Objeto" },
   { palavra: "CADERNO", categoria: "Objeto" },
   { palavra: "MOCHILA", categoria: "Objeto" },
   { palavra: "TELEVISAO", categoria: "Objeto" },
+  { palavra: "RELOGIO", categoria: "Objeto" },
+  { palavra: "LAMPADA", categoria: "Objeto" },
+  { palavra: "TESOURA", categoria: "Objeto" },
+  { palavra: "GARRAFA", categoria: "Objeto" },
+  { palavra: "ESPELHO", categoria: "Objeto" },
 
   // Lugares
   { palavra: "BRASIL", categoria: "Lugar" },
   { palavra: "PORTUGAL", categoria: "Lugar" },
-  { palavra: "JAPAO", categoria: "Lugar" }
+  { palavra: "JAPAO", categoria: "Lugar" },
+  { palavra: "ARGENTINA", categoria: "Lugar" },
+  { palavra: "CANADA", categoria: "Lugar" },
+  { palavra: "EGITO", categoria: "Lugar" },
+  { palavra: "NORUEGA", categoria: "Lugar" },
+  { palavra: "MEXICO", categoria: "Lugar" },
+
+  // Esportes
+  { palavra: "FUTEBOL", categoria: "Esporte" },
+  { palavra: "NATACAO", categoria: "Esporte" },
+  { palavra: "BASQUETE", categoria: "Esporte" },
+  { palavra: "TENIS", categoria: "Esporte" },
+  { palavra: "CICLISMO", categoria: "Esporte" },
+
+  // Natureza
+  { palavra: "CACHOEIRA", categoria: "Natureza" },
+  { palavra: "FLORESTA", categoria: "Natureza" },
+  { palavra: "VULCAO", categoria: "Natureza" },
+  { palavra: "DESERTO", categoria: "Natureza" },
+  { palavra: "MONTANHA", categoria: "Natureza" },
+
+  // Profissoes
+  { palavra: "PROFESSOR", categoria: "Profissao" },
+  { palavra: "MEDICO", categoria: "Profissao" },
+  { palavra: "ARQUITETO", categoria: "Profissao" },
+  { palavra: "BOMBEIRO", categoria: "Profissao" },
+  { palavra: "CIENTISTA", categoria: "Profissao" },
+
+  // Musica
+  { palavra: "VIOLAO", categoria: "Musica" },
+  { palavra: "BATERIA", categoria: "Musica" },
+  { palavra: "PIANO", categoria: "Musica" },
+  { palavra: "FLAUTA", categoria: "Musica" },
+  { palavra: "SINFONIA", categoria: "Musica" },
+
+  // Transportes
+  { palavra: "BICICLETA", categoria: "Transporte" },
+  { palavra: "AVIAO", categoria: "Transporte" },
+  { palavra: "NAVIO", categoria: "Transporte" },
+  { palavra: "MOTOCICLETA", categoria: "Transporte" },
+  { palavra: "HELICOPTERO", categoria: "Transporte" },
+
+  // Espaco
+  { palavra: "PLANETA", categoria: "Espaco" },
+  { palavra: "GALAXIA", categoria: "Espaco" },
+  { palavra: "ASTRONAUTA", categoria: "Espaco" },
+  { palavra: "COMETA", categoria: "Espaco" },
+  { palavra: "NEBULOSA", categoria: "Espaco" }
 ];
 
 let palavraSecreta = "";
@@ -67,6 +134,9 @@ function iniciarJogo() {
 function atualizarTela() {
   document.getElementById("palavra").innerText = letrasDescobertas.join(" ");
   document.getElementById("status").innerText = `Dica: ${categoriaAtual} | Erros: ${erros} de ${maxErros}`;
+  document.querySelectorAll(".forca-parte").forEach((parte) => {
+    parte.classList.toggle("visivel", Number(parte.dataset.erro) <= erros);
+  });
 }
 
 function criarTeclado() {
