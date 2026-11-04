@@ -1,18 +1,14 @@
 const bancoDePalavras = [
   // Tecnologia
-  { palavra: "GITHUB", categoria: "Tecnologia" },
+
   { palavra: "PROGRAMACAO", categoria: "Tecnologia" },
-  { palavra: "JAVASCRIPT", categoria: "Tecnologia" },
   { palavra: "COMPUTADOR", categoria: "Tecnologia" },
   { palavra: "INTERNET", categoria: "Tecnologia" },
   { palavra: "ALGORITMO", categoria: "Tecnologia" },
-  { palavra: "SOFTWARE", categoria: "Tecnologia" },
-  { palavra: "HARDWARE", categoria: "Tecnologia" },
   { palavra: "ROBOTICA", categoria: "Tecnologia" },
   { palavra: "APLICATIVO", categoria: "Tecnologia" },
   { palavra: "SATELITE", categoria: "Tecnologia" },
   { palavra: "SEGURANCA", categoria: "Tecnologia" },
-  { palavra: "NUVEM", categoria: "Tecnologia" },
   { palavra: "DADOS", categoria: "Tecnologia" },
   { palavra: "PIXEL", categoria: "Tecnologia" },
   { palavra: "SENHA", categoria: "Tecnologia" },
@@ -241,7 +237,7 @@ const bancoDePalavras = [
 ];
 
 let palavrasDisponiveis = [];
-let palavraAnterior = "";
+let temaAnterior = "";
 let palavraSecreta = "";
 let categoriaAtual = "";
 let letrasDescobertas = [];
@@ -259,20 +255,41 @@ function embaralhar(array) {
   return array;
 }
 
+function criarCicloDePalavras() {
+  const gruposPorTema = new Map();
+  bancoDePalavras.forEach((item) => {
+    if (!gruposPorTema.has(item.categoria)) gruposPorTema.set(item.categoria, []);
+    gruposPorTema.get(item.categoria).push(item);
+  });
+  gruposPorTema.forEach((palavras) => embaralhar(palavras));
+
+  const ciclo = [];
+  let temaAtual = temaAnterior;
+
+  while (ciclo.length < bancoDePalavras.length) {
+    const temasDisponiveis = [...gruposPorTema.entries()]
+      .filter(([tema, palavras]) => palavras.length > 0 && tema !== temaAtual);
+    const maiorGrupo = Math.max(...temasDisponiveis.map(([, palavras]) => palavras.length));
+    const temasPrioritarios = temasDisponiveis
+      .filter(([, palavras]) => palavras.length === maiorGrupo);
+    const [temaEscolhido, palavrasDoTema] = temasPrioritarios[
+      Math.floor(Math.random() * temasPrioritarios.length)
+    ];
+
+    ciclo.push(palavrasDoTema.pop());
+    temaAtual = temaEscolhido;
+  }
+
+  return ciclo.reverse();
+}
+
 function sortearPalavra() {
   if (palavrasDisponiveis.length === 0) {
-    palavrasDisponiveis = embaralhar([...bancoDePalavras]);
-
-    const ultimaPosicao = palavrasDisponiveis.length - 1;
-    if (palavrasDisponiveis[ultimaPosicao].palavra === palavraAnterior) {
-      const indiceTroca = Math.floor(Math.random() * ultimaPosicao);
-      [palavrasDisponiveis[indiceTroca], palavrasDisponiveis[ultimaPosicao]] =
-        [palavrasDisponiveis[ultimaPosicao], palavrasDisponiveis[indiceTroca]];
-    }
+    palavrasDisponiveis = criarCicloDePalavras();
   }
 
   const itemSorteado = palavrasDisponiveis.pop();
-  palavraAnterior = itemSorteado.palavra;
+  temaAnterior = itemSorteado.categoria;
   return itemSorteado;
 }
 
