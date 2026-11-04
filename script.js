@@ -134,9 +134,6 @@ function iniciarJogo() {
 function atualizarTela() {
   document.getElementById("palavra").innerText = letrasDescobertas.join(" ");
   document.getElementById("status").innerText = `Dica: ${categoriaAtual} | Erros: ${erros} de ${maxErros}`;
-  document.querySelectorAll(".forca-parte").forEach((parte) => {
-    parte.classList.toggle("visivel", Number(parte.dataset.erro) <= erros);
-  });
 }
 
 function criarTeclado() {
