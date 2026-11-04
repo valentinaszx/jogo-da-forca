@@ -12,6 +12,9 @@ const bancoDePalavras = [
   { palavra: "APLICATIVO", categoria: "Tecnologia" },
   { palavra: "SATELITE", categoria: "Tecnologia" },
   { palavra: "SEGURANCA", categoria: "Tecnologia" },
+  { palavra: "NUVEM", categoria: "Tecnologia" },
+  { palavra: "DADOS", categoria: "Tecnologia" },
+  { palavra: "PIXEL", categoria: "Tecnologia" },
 
   // Animais
   { palavra: "ELEFANTE", categoria: "Animal" },
@@ -25,6 +28,10 @@ const bancoDePalavras = [
   { palavra: "BALEIA", categoria: "Animal" },
   { palavra: "CANGURU", categoria: "Animal" },
   { palavra: "CORUJA", categoria: "Animal" },
+  { palavra: "GOLFINHO", categoria: "Animal" },
+  { palavra: "JACARE", categoria: "Animal" },
+  { palavra: "TARTARUGA", categoria: "Animal" },
+  { palavra: "RAPOSA", categoria: "Animal" },
 
   // Alimentos
   { palavra: "MELANCIA", categoria: "Alimento" },
@@ -36,6 +43,10 @@ const bancoDePalavras = [
   { palavra: "CENOURA", categoria: "Alimento" },
   { palavra: "PIPOCA", categoria: "Alimento" },
   { palavra: "CASTANHA", categoria: "Alimento" },
+  { palavra: "PANQUECA", categoria: "Alimento" },
+  { palavra: "FEIJAO", categoria: "Alimento" },
+  { palavra: "TOMATE", categoria: "Alimento" },
+  { palavra: "ABACATE", categoria: "Alimento" },
 
   // Objetos
   { palavra: "TECLADO", categoria: "Objeto" },
@@ -47,6 +58,10 @@ const bancoDePalavras = [
   { palavra: "TESOURA", categoria: "Objeto" },
   { palavra: "GARRAFA", categoria: "Objeto" },
   { palavra: "ESPELHO", categoria: "Objeto" },
+  { palavra: "CANETA", categoria: "Objeto" },
+  { palavra: "CHAVE", categoria: "Objeto" },
+  { palavra: "VENTILADOR", categoria: "Objeto" },
+  { palavra: "FONE", categoria: "Objeto" },
 
   // Lugares
   { palavra: "BRASIL", categoria: "Lugar" },
@@ -57,6 +72,10 @@ const bancoDePalavras = [
   { palavra: "EGITO", categoria: "Lugar" },
   { palavra: "NORUEGA", categoria: "Lugar" },
   { palavra: "MEXICO", categoria: "Lugar" },
+  { palavra: "CHILE", categoria: "Lugar" },
+  { palavra: "INDIA", categoria: "Lugar" },
+  { palavra: "ITALIA", categoria: "Lugar" },
+  { palavra: "PERU", categoria: "Lugar" },
 
   // Esportes
   { palavra: "FUTEBOL", categoria: "Esporte" },
@@ -64,6 +83,9 @@ const bancoDePalavras = [
   { palavra: "BASQUETE", categoria: "Esporte" },
   { palavra: "TENIS", categoria: "Esporte" },
   { palavra: "CICLISMO", categoria: "Esporte" },
+  { palavra: "VOLEI", categoria: "Esporte" },
+  { palavra: "JUDO", categoria: "Esporte" },
+  { palavra: "BOXE", categoria: "Esporte" },
 
   // Natureza
   { palavra: "CACHOEIRA", categoria: "Natureza" },
@@ -71,6 +93,9 @@ const bancoDePalavras = [
   { palavra: "VULCAO", categoria: "Natureza" },
   { palavra: "DESERTO", categoria: "Natureza" },
   { palavra: "MONTANHA", categoria: "Natureza" },
+  { palavra: "OCEANO", categoria: "Natureza" },
+  { palavra: "GELEIRA", categoria: "Natureza" },
+  { palavra: "RAIO", categoria: "Natureza" },
 
   // Profissoes
   { palavra: "PROFESSOR", categoria: "Profissao" },
@@ -78,6 +103,9 @@ const bancoDePalavras = [
   { palavra: "ARQUITETO", categoria: "Profissao" },
   { palavra: "BOMBEIRO", categoria: "Profissao" },
   { palavra: "CIENTISTA", categoria: "Profissao" },
+  { palavra: "DENTISTA", categoria: "Profissao" },
+  { palavra: "JORNALISTA", categoria: "Profissao" },
+  { palavra: "PILOTO", categoria: "Profissao" },
 
   // Musica
   { palavra: "VIOLAO", categoria: "Musica" },
@@ -85,6 +113,9 @@ const bancoDePalavras = [
   { palavra: "PIANO", categoria: "Musica" },
   { palavra: "FLAUTA", categoria: "Musica" },
   { palavra: "SINFONIA", categoria: "Musica" },
+  { palavra: "TAMBOR", categoria: "Musica" },
+  { palavra: "SAXOFONE", categoria: "Musica" },
+  { palavra: "MARACA", categoria: "Musica" },
 
   // Transportes
   { palavra: "BICICLETA", categoria: "Transporte" },
@@ -92,13 +123,51 @@ const bancoDePalavras = [
   { palavra: "NAVIO", categoria: "Transporte" },
   { palavra: "MOTOCICLETA", categoria: "Transporte" },
   { palavra: "HELICOPTERO", categoria: "Transporte" },
+  { palavra: "TREM", categoria: "Transporte" },
+  { palavra: "ONIBUS", categoria: "Transporte" },
+  { palavra: "METRO", categoria: "Transporte" },
 
   // Espaco
   { palavra: "PLANETA", categoria: "Espaco" },
   { palavra: "GALAXIA", categoria: "Espaco" },
   { palavra: "ASTRONAUTA", categoria: "Espaco" },
   { palavra: "COMETA", categoria: "Espaco" },
-  { palavra: "NEBULOSA", categoria: "Espaco" }
+  { palavra: "NEBULOSA", categoria: "Espaco" },
+  { palavra: "ESTRELA", categoria: "Espaco" },
+  { palavra: "ORBITA", categoria: "Espaco" },
+  { palavra: "METEORO", categoria: "Espaco" },
+
+  // Cores
+  { palavra: "VERMELHO", categoria: "Cor" },
+  { palavra: "AMARELO", categoria: "Cor" },
+  { palavra: "VERDE", categoria: "Cor" },
+  { palavra: "AZUL", categoria: "Cor" },
+  { palavra: "LARANJA", categoria: "Cor" },
+  { palavra: "BRANCO", categoria: "Cor" },
+
+  // Sentimentos
+  { palavra: "ALEGRIA", categoria: "Sentimento" },
+  { palavra: "SAUDADE", categoria: "Sentimento" },
+  { palavra: "CORAGEM", categoria: "Sentimento" },
+  { palavra: "MEDO", categoria: "Sentimento" },
+  { palavra: "ESPERANCA", categoria: "Sentimento" },
+  { palavra: "ORGULHO", categoria: "Sentimento" },
+
+  // Ciencia
+  { palavra: "MOLECULA", categoria: "Ciencia" },
+  { palavra: "ATOMO", categoria: "Ciencia" },
+  { palavra: "ENERGIA", categoria: "Ciencia" },
+  { palavra: "GRAVIDADE", categoria: "Ciencia" },
+  { palavra: "CELULA", categoria: "Ciencia" },
+  { palavra: "FOSSIL", categoria: "Ciencia" },
+
+  // Casa
+  { palavra: "COZINHA", categoria: "Casa" },
+  { palavra: "QUARTO", categoria: "Casa" },
+  { palavra: "JANELA", categoria: "Casa" },
+  { palavra: "SOFA", categoria: "Casa" },
+  { palavra: "TELHADO", categoria: "Casa" },
+  { palavra: "GARAGEM", categoria: "Casa" }
 ];
 
 let palavraSecreta = "";
@@ -107,6 +176,7 @@ let letrasDescobertas = [];
 let erros = 0;
 const maxErros = 6;
 let jogoAtivo = true;
+let timerProximaRodada = null;
 
 function embaralhar(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -117,6 +187,7 @@ function embaralhar(array) {
 }
 
 function iniciarJogo() {
+  clearTimeout(timerProximaRodada);
   const listaEmbaralhada = embaralhar([...bancoDePalavras]);
   const itemSorteado = listaEmbaralhada[0];
   
@@ -174,9 +245,10 @@ function processarPalpite(letra) {
 
 function verificarFimDeJogo() {
   if (!letrasDescobertas.includes("_")) {
-    document.getElementById("status").innerText = "Parabéns! Você venceu!";
+    document.getElementById("status").innerText = "Parabéns! Você venceu! Próxima rodada em instantes...";
     jogoAtivo = false;
     desativarTeclado();
+    timerProximaRodada = setTimeout(iniciarJogo, 1800);
   } else if (erros >= maxErros) {
     document.getElementById("status").innerText = `Você perdeu! A palavra era: ${palavraSecreta}`;
     jogoAtivo = false;
