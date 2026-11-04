@@ -1,3 +1,15 @@
+:root {
+  color-scheme: light;
+  --tinta: #193b35;
+  --papel: #fffdf7;
+  --fundo: #e9f1e7;
+  --linha: #d3ded2;
+  --tecla: #edf1e9;
+  --coral: #e75e43;
+  --amarelo: #f1c34f;
+  --texto-suave: #587069;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,99 +17,202 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  color: var(--tinta);
+  background-color: var(--fundo);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 35px, rgba(25, 59, 53, 0.035) 36px),
+    repeating-linear-gradient(90deg, transparent 0 35px, rgba(25, 59, 53, 0.035) 36px);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 32px 20px;
 }
 
 .container {
-  background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  padding: 38px;
+  border-radius: 8px;
+  box-shadow: 9px 9px 0 var(--tinta);
   text-align: center;
-  max-width: 500px;
+  max-width: 680px;
   width: 100%;
+  animation: entrar 420ms ease-out both;
+}
+
+.cabecalho {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.etiqueta {
+  margin-bottom: 10px;
+  color: var(--coral);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
 }
 
 h1 {
-  color: #333;
-  margin-bottom: 25px;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
+  color: var(--tinta);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.65rem;
+  line-height: 1.1;
 }
 
 .palavra {
-  font-size: 2.5rem;
-  letter-spacing: 12px;
-  margin: 30px 0;
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  justify-content: center;
+  margin: 18px 0 26px;
+  padding: 20px 12px;
+  border-block: 1px solid var(--linha);
+  background-color: #f4f5eb;
+  font-size: 2rem;
+  letter-spacing: 0.32em;
   font-weight: 700;
-  color: #2d3748;
-  min-height: 50px;
+  color: var(--tinta);
 }
 
 .teclado {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 9px;
+  margin-bottom: 24px;
 }
 
 .teclado button {
-  padding: 12px 16px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
+  min-width: 0;
+  aspect-ratio: 1.15;
+  border: 1px solid #d5ded2;
+  border-radius: 5px;
   cursor: pointer;
-  background-color: #edf2f7;
-  color: #2d3748;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background-color: var(--tecla);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 3px 0 #c5d1c5;
 }
 
 .teclado button:hover:not(:disabled) {
-  background-color: #667eea;
-  color: #ffffff;
+  background-color: var(--amarelo);
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 0 #d9aa36;
+}
+
+.teclado button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #c5d1c5;
+}
+
+.teclado button:focus-visible,
+#reiniciar:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
 }
 
 .teclado button:disabled {
-  background-color: #cbd5e0;
-  color: #a0aec0;
+  background-color: #e2e7df;
+  color: #89978d;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+  box-shadow: 0 1px 0 #c5d1c5;
 }
 
 #status {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #4a5568;
-  margin-bottom: 25px;
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--coral);
+  background-color: #f8eee5;
+  color: var(--tinta);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 #reiniciar {
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
-  color: white;
-  border: none;
-  border-radius: 10px;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 2px solid var(--tinta);
+  border-radius: 5px;
+  background-color: var(--coral);
+  color: #fffdf7;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+  box-shadow: 0 4px 0 #bd432f;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
 }
 
 #reiniciar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+  background-color: #d95036;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #bd432f;
+}
+
+#reiniciar:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #bd432f;
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 18px 14px;
+  }
+
+  .container {
+    padding: 26px 20px;
+    box-shadow: 6px 6px 0 var(--tinta);
+  }
+
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  .palavra {
+    min-height: 94px;
+    font-size: 1.4rem;
+    letter-spacing: 0.18em;
+  }
+
+  .teclado {
+    gap: 6px;
+  }
+
+  .teclado button {
+    aspect-ratio: 1;
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 

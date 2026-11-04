@@ -15,6 +15,8 @@ const bancoDePalavras = [
   { palavra: "NUVEM", categoria: "Tecnologia" },
   { palavra: "DADOS", categoria: "Tecnologia" },
   { palavra: "PIXEL", categoria: "Tecnologia" },
+  { palavra: "SENHA", categoria: "Tecnologia" },
+  { palavra: "MONITOR", categoria: "Tecnologia" },
 
   // Animais
   { palavra: "ELEFANTE", categoria: "Animal" },
@@ -32,6 +34,8 @@ const bancoDePalavras = [
   { palavra: "JACARE", categoria: "Animal" },
   { palavra: "TARTARUGA", categoria: "Animal" },
   { palavra: "RAPOSA", categoria: "Animal" },
+  { palavra: "ZEBRA", categoria: "Animal" },
+  { palavra: "LOBO", categoria: "Animal" },
 
   // Alimentos
   { palavra: "MELANCIA", categoria: "Alimento" },
@@ -47,6 +51,8 @@ const bancoDePalavras = [
   { palavra: "FEIJAO", categoria: "Alimento" },
   { palavra: "TOMATE", categoria: "Alimento" },
   { palavra: "ABACATE", categoria: "Alimento" },
+  { palavra: "CAFE", categoria: "Alimento" },
+  { palavra: "BISCOITO", categoria: "Alimento" },
 
   // Objetos
   { palavra: "TECLADO", categoria: "Objeto" },
@@ -62,6 +68,8 @@ const bancoDePalavras = [
   { palavra: "CHAVE", categoria: "Objeto" },
   { palavra: "VENTILADOR", categoria: "Objeto" },
   { palavra: "FONE", categoria: "Objeto" },
+  { palavra: "PANELA", categoria: "Objeto" },
+  { palavra: "MARTELO", categoria: "Objeto" },
 
   // Lugares
   { palavra: "BRASIL", categoria: "Lugar" },
@@ -76,6 +84,8 @@ const bancoDePalavras = [
   { palavra: "INDIA", categoria: "Lugar" },
   { palavra: "ITALIA", categoria: "Lugar" },
   { palavra: "PERU", categoria: "Lugar" },
+  { palavra: "CIDADE", categoria: "Lugar" },
+  { palavra: "PRAIA", categoria: "Lugar" },
 
   // Esportes
   { palavra: "FUTEBOL", categoria: "Esporte" },
@@ -86,6 +96,8 @@ const bancoDePalavras = [
   { palavra: "VOLEI", categoria: "Esporte" },
   { palavra: "JUDO", categoria: "Esporte" },
   { palavra: "BOXE", categoria: "Esporte" },
+  { palavra: "GINASTICA", categoria: "Esporte" },
+  { palavra: "SURFE", categoria: "Esporte" },
 
   // Natureza
   { palavra: "CACHOEIRA", categoria: "Natureza" },
@@ -96,6 +108,8 @@ const bancoDePalavras = [
   { palavra: "OCEANO", categoria: "Natureza" },
   { palavra: "GELEIRA", categoria: "Natureza" },
   { palavra: "RAIO", categoria: "Natureza" },
+  { palavra: "ARVORE", categoria: "Natureza" },
+  { palavra: "LAGOA", categoria: "Natureza" },
 
   // Profissoes
   { palavra: "PROFESSOR", categoria: "Profissao" },
@@ -106,6 +120,8 @@ const bancoDePalavras = [
   { palavra: "DENTISTA", categoria: "Profissao" },
   { palavra: "JORNALISTA", categoria: "Profissao" },
   { palavra: "PILOTO", categoria: "Profissao" },
+  { palavra: "ADVOGADO", categoria: "Profissao" },
+  { palavra: "ENFERMEIRO", categoria: "Profissao" },
 
   // Musica
   { palavra: "VIOLAO", categoria: "Musica" },
@@ -116,6 +132,8 @@ const bancoDePalavras = [
   { palavra: "TAMBOR", categoria: "Musica" },
   { palavra: "SAXOFONE", categoria: "Musica" },
   { palavra: "MARACA", categoria: "Musica" },
+  { palavra: "ACORDEON", categoria: "Musica" },
+  { palavra: "MELODIA", categoria: "Musica" },
 
   // Transportes
   { palavra: "BICICLETA", categoria: "Transporte" },
@@ -126,6 +144,8 @@ const bancoDePalavras = [
   { palavra: "TREM", categoria: "Transporte" },
   { palavra: "ONIBUS", categoria: "Transporte" },
   { palavra: "METRO", categoria: "Transporte" },
+  { palavra: "PATINETE", categoria: "Transporte" },
+  { palavra: "CAIAQUE", categoria: "Transporte" },
 
   // Espaco
   { palavra: "PLANETA", categoria: "Espaco" },
@@ -136,6 +156,8 @@ const bancoDePalavras = [
   { palavra: "ESTRELA", categoria: "Espaco" },
   { palavra: "ORBITA", categoria: "Espaco" },
   { palavra: "METEORO", categoria: "Espaco" },
+  { palavra: "LUA", categoria: "Espaco" },
+  { palavra: "ASTEROIDE", categoria: "Espaco" },
 
   // Cores
   { palavra: "VERMELHO", categoria: "Cor" },
@@ -144,6 +166,8 @@ const bancoDePalavras = [
   { palavra: "AZUL", categoria: "Cor" },
   { palavra: "LARANJA", categoria: "Cor" },
   { palavra: "BRANCO", categoria: "Cor" },
+  { palavra: "PRETO", categoria: "Cor" },
+  { palavra: "CINZA", categoria: "Cor" },
 
   // Sentimentos
   { palavra: "ALEGRIA", categoria: "Sentimento" },
@@ -152,6 +176,8 @@ const bancoDePalavras = [
   { palavra: "MEDO", categoria: "Sentimento" },
   { palavra: "ESPERANCA", categoria: "Sentimento" },
   { palavra: "ORGULHO", categoria: "Sentimento" },
+  { palavra: "AMIZADE", categoria: "Sentimento" },
+  { palavra: "CALMA", categoria: "Sentimento" },
 
   // Ciencia
   { palavra: "MOLECULA", categoria: "Ciencia" },
@@ -160,6 +186,8 @@ const bancoDePalavras = [
   { palavra: "GRAVIDADE", categoria: "Ciencia" },
   { palavra: "CELULA", categoria: "Ciencia" },
   { palavra: "FOSSIL", categoria: "Ciencia" },
+  { palavra: "MICROSCOPIO", categoria: "Ciencia" },
+  { palavra: "PESQUISA", categoria: "Ciencia" },
 
   // Casa
   { palavra: "COZINHA", categoria: "Casa" },
@@ -167,9 +195,53 @@ const bancoDePalavras = [
   { palavra: "JANELA", categoria: "Casa" },
   { palavra: "SOFA", categoria: "Casa" },
   { palavra: "TELHADO", categoria: "Casa" },
-  { palavra: "GARAGEM", categoria: "Casa" }
+  { palavra: "GARAGEM", categoria: "Casa" },
+  { palavra: "BANHEIRO", categoria: "Casa" },
+  { palavra: "CORTINA", categoria: "Casa" },
+
+  // Roupas
+  { palavra: "CAMISETA", categoria: "Roupa" },
+  { palavra: "CASACO", categoria: "Roupa" },
+  { palavra: "VESTIDO", categoria: "Roupa" },
+  { palavra: "CHAPEU", categoria: "Roupa" },
+  { palavra: "CALCADO", categoria: "Roupa" },
+  { palavra: "GRAVATA", categoria: "Roupa" },
+
+  // Clima
+  { palavra: "TEMPESTADE", categoria: "Clima" },
+  { palavra: "CHUVA", categoria: "Clima" },
+  { palavra: "NEVE", categoria: "Clima" },
+  { palavra: "VENTO", categoria: "Clima" },
+  { palavra: "TROVAO", categoria: "Clima" },
+  { palavra: "ARCOIRIS", categoria: "Clima" },
+
+  // Insetos
+  { palavra: "FORMIGA", categoria: "Inseto" },
+  { palavra: "ABELHA", categoria: "Inseto" },
+  { palavra: "MOSQUITO", categoria: "Inseto" },
+  { palavra: "JOANINHA", categoria: "Inseto" },
+  { palavra: "BESOURO", categoria: "Inseto" },
+  { palavra: "GRILO", categoria: "Inseto" },
+
+  // Escola
+  { palavra: "GEOGRAFIA", categoria: "Escola" },
+  { palavra: "HISTORIA", categoria: "Escola" },
+  { palavra: "MATEMATICA", categoria: "Escola" },
+  { palavra: "LAPIS", categoria: "Escola" },
+  { palavra: "QUADRO", categoria: "Escola" },
+  { palavra: "BORRACHA", categoria: "Escola" },
+
+  // Lazer
+  { palavra: "XADREZ", categoria: "Lazer" },
+  { palavra: "DOMINO", categoria: "Lazer" },
+  { palavra: "PATINS", categoria: "Lazer" },
+  { palavra: "PIQUENIQUE", categoria: "Lazer" },
+  { palavra: "CINEMA", categoria: "Lazer" },
+  { palavra: "CAMPING", categoria: "Lazer" }
 ];
 
+let palavrasDisponiveis = [];
+let palavraAnterior = "";
 let palavraSecreta = "";
 let categoriaAtual = "";
 let letrasDescobertas = [];
@@ -186,10 +258,26 @@ function embaralhar(array) {
   return array;
 }
 
+function sortearPalavra() {
+  if (palavrasDisponiveis.length === 0) {
+    palavrasDisponiveis = embaralhar([...bancoDePalavras]);
+
+    const ultimaPosicao = palavrasDisponiveis.length - 1;
+    if (palavrasDisponiveis[ultimaPosicao].palavra === palavraAnterior) {
+      const indiceTroca = Math.floor(Math.random() * ultimaPosicao);
+      [palavrasDisponiveis[indiceTroca], palavrasDisponiveis[ultimaPosicao]] =
+        [palavrasDisponiveis[ultimaPosicao], palavrasDisponiveis[indiceTroca]];
+    }
+  }
+
+  const itemSorteado = palavrasDisponiveis.pop();
+  palavraAnterior = itemSorteado.palavra;
+  return itemSorteado;
+}
+
 function iniciarJogo() {
   clearTimeout(timerProximaRodada);
-  const listaEmbaralhada = embaralhar([...bancoDePalavras]);
-  const itemSorteado = listaEmbaralhada[0];
+  const itemSorteado = sortearPalavra();
   
   palavraSecreta = itemSorteado.palavra.toUpperCase();
   categoriaAtual = itemSorteado.categoria;

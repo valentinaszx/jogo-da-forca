@@ -8,13 +8,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Jogo da Forca</h1>
-    <div id="palavra" class="palavra"></div>
-    <div id="teclado" class="teclado"></div>
-    <p id="status"></p>
-    <button id="reiniciar" onclick="iniciarJogo()">Novo Jogo</button>
-  </div>
+  <main class="container">
+    <header class="cabecalho">
+      <p class="etiqueta">DESAFIO DE PALAVRAS</p>
+      <h1>Jogo da Forca</h1>
+    </header>
+    <section class="partida" aria-label="Partida atual">
+      <p id="status" aria-live="polite" aria-atomic="true"></p>
+      <div id="palavra" class="palavra" aria-live="polite"></div>
+      <div id="teclado" class="teclado" role="group" aria-label="Teclado de letras"></div>
+    </section>
+    <button id="reiniciar" type="button" onclick="iniciarJogo()">Novo jogo</button>
+  </main>
 
   <!-- Campo oculto para ativar o teclado virtual do celular -->
   <input type="text" id="inputMovel" style="opacity: 0; position: absolute; pointer-events: none;" />
